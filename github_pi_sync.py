@@ -41,8 +41,8 @@ while True:
         (git_status, error) = git_query.communicate()
 
         with open('/home/pi/projects/utils/test.log', 'a') as outfile:
-            outfile.write(git_status)
-            outfile.write(error)
+            outfile.write(str(git_status))
+            outfile.write(str(error))
 
         if git_query.poll() != 0:
             print(git_status, error)
