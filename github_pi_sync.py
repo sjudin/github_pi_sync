@@ -38,7 +38,7 @@ while True:
     time.sleep(5)
     if not previous == git.last_modified:
         # repo has been updated, do git pull
-        git_query = Popen(git_command, stdout=PIPE, stderr=PIPE)
+        git_query = Popen(git_command, cwd=repository, stdout=PIPE, stderr=PIPE)
         (git_status, error) = git_query.communicate()
 
         with open('/home/pi/projects/utils/test.log', 'a') as outfile:
