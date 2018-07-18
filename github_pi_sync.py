@@ -10,7 +10,6 @@ import time
 time.sleep(15)
 
 test = True
-test = False
 
 class gitHub(Github):
     def __init__(self, username, password, repo):
