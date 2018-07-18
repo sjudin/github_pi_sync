@@ -8,6 +8,8 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from datetime import datetime
 
+time.sleep(15)
+
 server = smtplib.SMTP('smtp.gmail.com', 587)
 server.starttls()
 server.login(sys.argv[1], sys.argv[2])
