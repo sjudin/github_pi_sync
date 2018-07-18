@@ -7,6 +7,8 @@ from os import path
 
 import time
 
+test = True
+
 time.sleep(15)
 
 class gitHub(Github):
@@ -38,7 +40,7 @@ while True:
         git_query = Popen(git_command, stdout=PIPE, stderr=PIPE)
         (git_status, error) = git_query.communicate()
 
-        with open('~/projects/utils/test.log','a') as outfile:
+        with open('~/projects/utils/test.log', 'a') as outfile:
             outfile.write(git_status)
             outfile.write(error)
 
