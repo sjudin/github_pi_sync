@@ -7,8 +7,6 @@ from os import path
 
 import time
 
-test = True
-
 time.sleep(15)
 
 class gitHub(Github):
