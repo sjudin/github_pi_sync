@@ -10,8 +10,6 @@ from datetime import datetime
 
 time.sleep(15)
 
-test = True
-test = False
 
 server = smtplib.SMTP('smtp.gmail.com', 587)
 server.starttls()
