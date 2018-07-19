@@ -9,9 +9,8 @@ from os import path
 
 import time
 
-time.sleep(15)
+#time.sleep(15)
 
-test = True
 
 class gitHub(Github):
     def __init__(self, username, password, repo):
@@ -31,7 +30,7 @@ class gitHub(Github):
 
 git = gitHub(sys.argv[1], sys.argv[2], sys.argv[3])
 git_command = ['git', 'pull']
-repository = path.dirname('/home/pi/projects/' + git.repo.name)
+repository = path.dirname('/home/pi/projects/' + git.repo.name + '/')
 
 while True:
     previous = git.last_modified
