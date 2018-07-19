@@ -11,6 +11,7 @@ from github import GithubException
 time.sleep(15)
 
 test = True
+test = False
 
 
 class gitHub(Github):
