@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 import sys
+import time
 
 from github import Github
 from subprocess import Popen, PIPE
 from os import path
+from github import GithubException
 
-import time
 
 time.sleep(15)
 
@@ -17,13 +18,24 @@ class gitHub(Github):
         self.last_modified = self.get_commits()[0].last_modified
 
     def get_commits(self):
-        commits = list()
-        for r in self.repo.get_commits():
-                commits.append(r)
-        return commits
+        for x in range(100):
+            try:
+                commits = list()
+                for r in self.repo.get_commits():
+                        commits.append(r)
+                return commits
+            except GithubException:
+                pass
+            time.sleep(1)
 
     def update(self):
-        self.last_modified = self.get_commits()[0].last_modified
+        for x in range(100):
+            try:
+                self.last_modified = self.get_commits()[0].last_modified
+                return
+            except GithubException:
+                pass
+            time.sleep(1)
 
 
 git = gitHub(sys.argv[1], sys.argv[2], sys.argv[3])
@@ -40,8 +52,9 @@ while True:
         (git_status, error) = git_query.communicate()
 
         with open('/home/pi/projects/utils/test.log', 'a') as outfile:
-            outfile.write(str(git_status))
-            outfile.write(str(error))
+            outfile.write(str(git_status + '\n'))
+            outfile.write(str(error + '\n'))
+            outfile.close()
 
         if git_query.poll() != 0:
             print(git_status, error)
