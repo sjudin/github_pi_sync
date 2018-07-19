@@ -1,17 +1,16 @@
 #!/usr/bin/python3
 import sys
 
-#TODO: IMPLEMENT WITH GITPYTHON INSTEAD, https://stackoverflow.com/questions/15315573/how-can-i-call-git-pull-from-within-python
-
 from github import Github
 from subprocess import Popen, PIPE
 from os import path
 
 import time
 
-#time.sleep(15)
-
+time.sleep(15)
 test = True
+test = False
+
 
 class gitHub(Github):
     def __init__(self, username, password, repo):
