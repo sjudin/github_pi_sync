@@ -28,7 +28,7 @@ def measure_temp():
 
 
 while True:
-    if measure_temp() > 83:
+    if measure_temp() > 30:
         body = str("Raspberry at home has overheated at " + str(datetime.now()) + ', script has shut down, remember to start it up again')
         msg.attach(MIMEText(body, 'plain'))
         text = msg.as_string()

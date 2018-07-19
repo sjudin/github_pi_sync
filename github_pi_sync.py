@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 import sys
 
+#TODO: IMPLEMENT WITH GITPYTHON INSTEAD, https://stackoverflow.com/questions/15315573/how-can-i-call-git-pull-from-within-python
+
 from github import Github
 from subprocess import Popen, PIPE
 from os import path
