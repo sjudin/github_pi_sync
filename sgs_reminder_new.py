@@ -5,7 +5,7 @@ import time
 import os
 from pyvirtualdisplay import Display
 
-display = Display(visible=0, size(800,800))
+display = Display(visible=0, size=(800,800))
 display.start()
 
 #os.environ['DISPLAY'] = '0.0'
