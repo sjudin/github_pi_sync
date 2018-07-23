@@ -19,3 +19,8 @@ pyautogui.typewrite(sys.argv[2])
 time.sleep(1)
 
 driver.find_element_by_class_name('sgs-link-to').click()
+
+print(driver.find_element_by_id('queueStatus').text)
+
+
+driver.close()
