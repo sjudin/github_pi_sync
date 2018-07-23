@@ -2,8 +2,9 @@ from selenium import webdriver
 import pyautogui
 import sys
 import time
+import os
 
-
+os.environ['DISPLAY'] = '0'
 driver = webdriver.Chrome("/usr/lib/chromium-browser/chromedriver")
 
 
