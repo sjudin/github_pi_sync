@@ -1,9 +1,8 @@
 from selenium import webdriver
-import pyautogui
 
 
 
-driver = webdriver.Chrome(executable_path='/usr/bin/chromium-browser')
+driver = webdriver.Chrome(executable_path='/usr/local/bin/chromedriver')
 
 driver.get('https://www.sgsstudentbostader.se/')
 driver.find_element_by_class_name('mina-sidor-button').click()
