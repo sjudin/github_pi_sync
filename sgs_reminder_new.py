@@ -20,7 +20,7 @@ time.sleep(1)
 
 driver.find_element_by_class_name('sgs-link-to').click()
 
-time.sleep(5)
+time.sleep(10)
 print(driver.find_element_by_id('queueStatus').text)
 
 
