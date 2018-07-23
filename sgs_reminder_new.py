@@ -3,12 +3,8 @@ import pyautogui
 import sys
 import time
 import os
-from pyvirtualdisplay import Display
 
-display = Display(visible=0, size=(800,800))
-display.start()
-
-#os.environ['DISPLAY'] = '0.0'
+os.environ['DISPLAY'] = '10.0'
 driver = webdriver.Chrome("/usr/lib/chromium-browser/chromedriver")
 
 
