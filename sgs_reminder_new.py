@@ -2,6 +2,7 @@ from selenium import webdriver
 import pyautogui
 import sys
 import time
+import datetime
 
 driver = webdriver.Chrome("/usr/lib/chromium-browser/chromedriver")
 
@@ -22,6 +23,6 @@ driver.find_element_by_class_name('sgs-link-to').click()
 time.sleep(10)
 driver.save_screenshot('updated_latest.png')
 
-print('finished!')
+print(str(sys.argv[0]) + 'finished at ' + str(datetime.datetime.now()))
 
 driver.close()
