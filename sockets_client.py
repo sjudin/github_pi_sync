@@ -13,5 +13,7 @@ print("Test client sending packets to IP {0}, via port {1}\n".format(SERVER_IP, 
 
 print(s.recv(1024))
 
-s.send(str(datetime.datetime.now()).encode('UTF-8'))
+i = input('Enter your input')
+
+s.send(i.encode('UTF-8'))
 s.close()
