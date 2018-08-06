@@ -2,6 +2,14 @@ import socket
 
 from datetime import datetime
 
+
+def make_unicode(input):
+    if type(input) is str:
+        return input.encode('utf-8')
+    else:
+        return input.decode('utf-8')
+
+
 s = socket.socket()
 
 host = socket.gethostname()
@@ -13,11 +21,11 @@ s.listen(5)
 while True:
     c, addr = s.accept()
     print('Got connection from', addr)
-    c.send('Thank you for connecting!'.encode('UTF-8'))
+    c.send(make_unicode('Thank you for connecting!'))
 
-    recv = c.recv(1024).decode('utf-8')
+    recv = make_unicode(c.recv(1024))
 
-    if recv is 'time':
-        c.send(str(datetime.now()).encode('utf-8'))
+    if recv is '1':
+        c.send(make_unicode(str(datetime.now())))
 
     c.close()
