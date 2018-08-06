@@ -16,4 +16,6 @@ print(s.recv(1024))
 i = input('Enter your input')
 
 s.send(i.encode('UTF-8'))
+print(s.recv(1024))
+
 s.close()
