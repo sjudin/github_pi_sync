@@ -27,5 +27,10 @@ while True:
 
     if recv is '1':
         c.send(make_unicode(str(datetime.now())))
+        print('Sent time!')
+
+    elif recv is '2':
+        c.send(make_unicode('test'))
+        print('Sent test')
 
     c.close()
