@@ -1,15 +1,16 @@
 from selenium import webdriver
-import pyautogui
 import sys
 import time
 import datetime
+#from pyvirtualdisplay import Display
 
-driver = webdriver.Chrome("/usr/lib/chromium-browser/chromedriver")
-#driver = webdriver.Chrome()
-driver.fullscreen_window()
+options = webdriver.ChromeOptions()
+options.add_argument('headless')
+options.add_argument('no-sandbox')
+#driver = webdriver.Chrome(chrome_options=options)
+driver = webdriver.Chrome("/usr/lib/chromium-browser/chromedriver", chrome_options=options)
 
-driver.get('https://www.sgsstudentbostader.se/')
-driver.find_element_by_class_name('nav-link').click()
+driver.get('https://www.sgsstudentbostader.se/Mina-sidor/Login?return=https://www.sgsstudentbostader.se/sv-se/mina-sidor')
 driver.find_element_by_name('User').send_keys(sys.argv[1])
 driver.find_element_by_name('Password').send_keys(sys.argv[2])
 
