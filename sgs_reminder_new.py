@@ -18,6 +18,7 @@ driver.find_element_by_class_name('btn-primary').click()
 
 time.sleep(10)
 
+print(driver.find_element_by_id('queueStatus').text)
 # pyautogui.click(x=137, y=487)
 # pyautogui.typewrite(sys.argv[1])
 # pyautogui.click(x=137, y=553)
