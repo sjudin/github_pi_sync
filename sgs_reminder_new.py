@@ -7,6 +7,7 @@ import datetime
 options = webdriver.ChromeOptions()
 options.add_argument('headless')
 options.add_argument('no-sandbox')
+options.add_argument('start-maximized')
 #driver = webdriver.Chrome(chrome_options=options)
 driver = webdriver.Chrome("/usr/lib/chromium-browser/chromedriver", chrome_options=options)
 
@@ -18,7 +19,6 @@ driver.find_element_by_class_name('btn-primary').click()
 
 time.sleep(10)
 
-print(driver.find_element_by_id('queueStatus').text)
 # pyautogui.click(x=137, y=487)
 # pyautogui.typewrite(sys.argv[1])
 # pyautogui.click(x=137, y=553)
